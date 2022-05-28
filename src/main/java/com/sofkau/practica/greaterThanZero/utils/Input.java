@@ -1,4 +1,6 @@
-package com.sofkau.practica.numbers.utils;
+package com.sofkau.practica.greaterThanZero.utils;
+
+import com.sofkau.practica.numbers.utils.Message;
 
 import java.util.Scanner;
 
@@ -13,11 +15,18 @@ import java.util.Scanner;
  * @since 1.0.0
  */
 public class Input {
+    /**
+     * Instancia de la clase Scanner
+     */
     private static final Scanner SCAN = new Scanner(System.in);
+    /**
+     * Unica instancia de clase
+     */
     private static final Input INPUT = new Input();
 
     private Input() {
     }
+
     /**
      * Metodo para obtener la instancia de clase.
      * @return Input
@@ -27,16 +36,17 @@ public class Input {
     }
 
     /**
-     * Retorna el valor ingresado, si es invalida la entrada retorna 100.
-     * @return Integer
+     * Metodo que lee por teclado el ingreso valida la entrada.
+     * Si la entrada es invalida retorna -1
+     * @return Double
      */
-    public Integer scan(){
-        Integer in;
+    public Double scan(){
+        Double in;
         try {
-            in = Integer.parseInt(SCAN.nextLine());
+            in = Double.parseDouble(SCAN.nextLine());
         }catch (Exception e){
             Message.warn("Solo se aceptan entradas numericas");
-            return 100;
+            return (double)-1;
         }
         return in;
     }
