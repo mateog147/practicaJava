@@ -1,4 +1,4 @@
-package com.sofkau.practica.greaterThanZero.utils;
+package com.sofkau.practica.greaterthanzero.utils;
 
 import com.sofkau.practica.numbers.utils.Message;
 

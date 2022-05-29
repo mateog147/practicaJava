@@ -1,6 +1,6 @@
-package com.sofkau.practica.greaterThanZero;
+package com.sofkau.practica.greaterthanzero;
 
-import com.sofkau.practica.greaterThanZero.utils.Input;
+import com.sofkau.practica.greaterthanzero.utils.Input;
 import java.util.logging.Logger;
 
 /**
