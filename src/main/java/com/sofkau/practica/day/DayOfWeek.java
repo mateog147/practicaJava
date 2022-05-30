@@ -90,13 +90,15 @@ public class DayOfWeek {
                 case "miercoles"->logger.info("EL miercoles es un día Laboral");
                 case "jueves"   ->logger.info("EL jueves es un día Laboral");
                 case "viernes"  ->logger.info("EL viernes es un día Laboral");
-
+                default         -> logger.warning("error de ejecución");
             }
 
         }else{
-            switch(day){
-                case "sabado"   ->logger.info("EL sabado NO es un día Laboral :)");
-                case "domingo"  ->logger.info("EL domingo NO es un día Laboral :)");
+
+            if(day.equals("sabado")){
+                logger.info("EL sabado NO es un día Laboral :)");
+            }else{
+                logger.info("EL domingo NO es un día Laboral :)");
             }
         }
     }
