@@ -1,4 +1,4 @@
-package com.sofkau.practica.circulo;
+package com.sofkau.practica.circle;
 
 import junit.framework.TestCase;
 import org.junit.Assert;

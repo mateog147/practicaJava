@@ -65,4 +65,37 @@ public class Input {
         }
         return in;
     }
+
+    /**
+     * Metodo que lee por teclado un char, el ingreso valida la entrada.
+     * Si ingresa una linea tomara solo el primer caracter
+     * Si la entrada es invalida retorna 'N'
+     * @return Character
+     */
+    public Character character(){
+        Character ch;
+        try {
+            ch = (SCAN.nextLine()).charAt(0);
+        }catch (Exception e){
+            Message.warn("Entrada Invalida para el Caracter");
+            return 'N';
+        }
+        return ch;
+    }
+
+    /**
+     * Metodo que lee por teclado un double, el ingreso valida la entrada.
+     * Si la entrada es invalida retorna 0
+     * @return Double
+     */
+    public Double decimal(){
+        Double d;
+        try {
+            d = Double.parseDouble(SCAN.nextLine());
+        }catch (Exception e){
+            Message.warn("Entrada Invalida para entrada numerica");
+            return 0.0;
+        }
+        return d;
+    }
 }

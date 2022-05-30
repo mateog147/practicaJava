@@ -1,4 +1,4 @@
-package com.sofkau.practica.comparador;
+package com.sofkau.practica.comparator;
 
 import java.util.Optional;
 import java.util.Scanner;

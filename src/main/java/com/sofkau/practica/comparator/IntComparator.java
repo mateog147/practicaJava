@@ -1,4 +1,4 @@
-package com.sofkau.practica.comparador;
+package com.sofkau.practica.comparator;
 
 /**
  * Clase Int Comparator.
