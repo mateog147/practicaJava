@@ -1,5 +1,7 @@
 package com.sofkau.practica.person;
 
+import com.sofkau.practica.person.utils.Persona;
+import com.sofkau.practica.person.utils.Response;
 import com.sofkau.practica.strings.utils.Input;
 import com.sofkau.practica.strings.utils.Message;
 
@@ -26,7 +28,7 @@ public class App {
 
     public static void main(String[] args) {
         Input input = Input.getInstance();
-        ArrayList<Persona> persons = new ArrayList<Persona>();
+        ArrayList<Persona> persons = new ArrayList<>();
         String name;
         Integer age;
         Character sex;
@@ -76,19 +78,20 @@ public class App {
                 personas) {
             Message.print(person.toString());
             Message.print(imprimirIMC(person.calcularIMC()));
-            Message.print((person.esMayorDeEdad())?"Es Mayor de edad":"Es menor de Edad");
+            Message.print(Boolean.TRUE.equals(person.esMayorDeEdad())?"Es Mayor de edad":"Es menor de Edad");
         }
     }
 
     private static String imprimirIMC(Integer index){
-        String response;
+        Response response = Response.getInstance();
+
         switch (index){
-            case -1 -> response = "Está por debajo de su peso ideal";
-            case 0  -> response = "Está en su peso ideal";
-            case 1  -> response = "Tiene sobrepeso";
-            default -> response = "IMC fuera de Randgo";
+            case -1 -> response.setStrResponse("Está por debajo de su peso ideal");
+            case 0  -> response.setStrResponse("Está en su peso ideal") ;
+            case 1  -> response.setStrResponse("Tiene sobrepeso") ;
+            default -> response.setStrResponse("IMC fuera de Rango") ;
         }
-        return response;
+        return response.getStrResponse();
     }
 
 }

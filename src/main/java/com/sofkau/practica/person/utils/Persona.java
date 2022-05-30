@@ -1,4 +1,4 @@
-package com.sofkau.practica.person;
+package com.sofkau.practica.person.utils;
 
 import java.util.Random;
 
