@@ -1,38 +1,27 @@
 package com.sofkau.practica.appliances.utils;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Locale;
 
 public class Electrodomestico {
-    private final Integer PRICEDEFAULT = 100;
-    private final String COLORDEFAULT = "blanco";
-    private final Integer WEIGHTDEFAULT = 5;
-    private final Character CONSUMEDEFAULT = 'F';
-
-    private final Character[] CODES = {'A', 'B', 'C', 'D', 'E', 'F'};
-    private final HashSet<Character> CONSUMECODES = new HashSet<Character>(List.of(CODES));
-    private final String[] COLORS = {"blanco", "negro", "rojo", "azul", "gris"};
-    private final HashSet<String> POSIBLECOLORS = new HashSet<String>(List.of(COLORS));
-
-
+    private static  final Recargo RECARGO = Recargo.getInstance();
     private Integer precioBase;
     private String color;
     private Character consumoEnergetico;
     private Integer peso;
 
+
     public Electrodomestico() {
-        this.precioBase = PRICEDEFAULT;
-        this.color = COLORDEFAULT;
-        this.consumoEnergetico = CONSUMEDEFAULT;
-        this.peso = WEIGHTDEFAULT;
+        this.precioBase = Constantes.PRICEDEFAULT;
+        this.color = Constantes.COLORDEFAULT;
+        this.consumoEnergetico = Constantes.CONSUMEDEFAULT;
+        this.peso = Constantes.WEIGHTDEFAULT;
     }
 
     public Electrodomestico(Integer precioBase, Integer peso) {
         this.precioBase = precioBase;
-        this.color = COLORDEFAULT;
-        this.consumoEnergetico = CONSUMEDEFAULT;
+        this.color = Constantes.COLORDEFAULT;
+        this.consumoEnergetico = Constantes.CONSUMEDEFAULT;
         this.peso = peso;
     }
 
@@ -69,35 +58,13 @@ public class Electrodomestico {
 
     private Integer cargoConsumo(){
 
-        switch (this.consumoEnergetico){
-            case 'A' -> {
-                return 100;
-            }
-            case 'B' -> {
-                return  80;
-            }
-            case 'C' -> {
-                return  60;
-            }
-            case 'D' -> {
-                return  50;
-            }
-            case 'E' -> {
-                return  30;
-            }
-            case 'F' -> {
-                return  10;
-            }
-            default -> {
-                return 0;
-            }
-        }
+        return RECARGO.cargoConsumo(this.consumoEnergetico);
 
     }
 
     private Integer cargoPeso(){
         Integer price;
-        switch (determinarRango()){
+        switch (RECARGO.determinarRango(this.peso)){
             case 19 -> price = 10;
             case 49 -> price = 50;
             case 79 -> price = 80;
@@ -107,33 +74,19 @@ public class Electrodomestico {
         return  price;
     }
 
-    private Integer determinarRango(){
-        ArrayList<Integer> limites = new ArrayList<Integer>();
-        limites.add(19);
-        limites.add(49);
-        limites.add(79);
-
-        for (Integer limite:limites) {
-            if(this.peso - limite <= 0){
-                return limite;
-            }
-        }
-
-        return 80;
-    }
 
     private Character comprobarConsumoEnergetico(Character ch){
-        if(CONSUMECODES.contains(ch)){
+        if(Constantes.CONSUMECODES.contains(ch)){
             return ch;
         }
-        return CONSUMEDEFAULT;
+        return Constantes.CONSUMEDEFAULT;
     }
 
     private String comprobarColor(String color){
-        if(POSIBLECOLORS.contains(color)){
+        if(Constantes.POSIBLECOLORS.contains(color)){
             return color;
         }
-        return COLORDEFAULT;
+        return Constantes.COLORDEFAULT;
     }
 
 }
