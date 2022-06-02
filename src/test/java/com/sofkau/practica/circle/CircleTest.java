@@ -1,6 +1,5 @@
 package com.sofkau.practica.circle;
 
-import com.sofkau.practica.appliances.utils.circle.Circle;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;

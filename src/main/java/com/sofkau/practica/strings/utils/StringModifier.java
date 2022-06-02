@@ -69,7 +69,7 @@ public class StringModifier {
     }
 
     /**
-     * 12.	Pedir dos palabras por teclado, indicar si son iguales,
+     * Pedir dos palabras por teclado, indicar si son iguales,
      * si no son iguales mostrar sus diferencias.
      */
     public void spotDifferences(){
