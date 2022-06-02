@@ -30,6 +30,10 @@ Para ver cada solución seguir la guía de numero ejercicio y package:
 - `17`. appliances
 - `18`. deliverable
 
+##Videos
+- Ejercicio 16: https://youtu.be/Jpj-f5RCWUE
+- Ejercicio 17: https://youtu.be/62CEAnxyNzI
+- Ejercicio 18: https://youtu.be/yyAUSrpt9RQ
 
 
 

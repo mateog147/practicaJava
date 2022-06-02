@@ -1,6 +1,8 @@
 package com.sofkau.practica.deliverable.interfaz;
 
-public interface Entregable {
+import com.sofkau.practica.deliverable.utils.VideoJuego;
+
+public interface Entregable <T>{
     /**
      * Cambia el atributo prestado a true
      */
@@ -17,5 +19,5 @@ public interface Entregable {
     /**
      * compara las horas estimadas en los videojuegos y en las series el numero de temporadas
      */
-      Integer compareTo (Object a);
+      Integer compareTo (T object);
 }

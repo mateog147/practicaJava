@@ -9,7 +9,7 @@ import com.sofkau.practica.deliverable.interfaz.Entregable;
  * @version 1.0.0 2022/06/02
  * @since 1.0.0
  */
-public class Serie implements Entregable {
+public class Serie implements Entregable<Serie> {
 
     private String titulo;
     private Integer temporadas;
@@ -115,7 +115,10 @@ public class Serie implements Entregable {
     }
 
     @Override
-    public Integer compareTo(Object a) {
-        return null;
+    public Integer compareTo(Serie oj) {
+        if(oj.getTemporadas() >= this.getTemporadas()){
+            return 1;
+        }
+        return 0;
     }
 }

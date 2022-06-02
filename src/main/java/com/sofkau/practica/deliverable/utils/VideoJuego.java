@@ -9,7 +9,7 @@ import com.sofkau.practica.deliverable.interfaz.Entregable;
  * @version 1.0.0 2022/06/02
  * @since 1.0.0
  */
-public class VideoJuego  implements Entregable {
+public class VideoJuego  implements Entregable<VideoJuego> {
     private String titulo;
     private Integer horas;
     private Boolean entregado;
@@ -111,7 +111,12 @@ public class VideoJuego  implements Entregable {
     }
 
     @Override
-    public Integer compareTo(Object a) {
-        return null;
+    public Integer compareTo(VideoJuego oj) {
+        if(oj.getHoras() >= this.getHoras()){
+            return 1;
+        }
+        return 0;
     }
+
+
 }

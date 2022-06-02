@@ -124,7 +124,7 @@ public class Main {
     private static void showMoreSeason(ArrayList<Serie> series){
         Serie temp = series.get(0);
         for (Serie element: series) {
-            if(temp.getTemporadas()<=element.getTemporadas()){
+            if(temp.compareTo(element) == 1){
                 temp = element;
             }
         }
@@ -141,7 +141,7 @@ public class Main {
     private static void showMoreHours(ArrayList<VideoJuego> games){
         VideoJuego temp = games.get(0);
         for (VideoJuego element: games) {
-            if(temp.getHoras()<=element.getHoras()){
+            if(temp.compareTo(element) == 1){
                 temp = element;
             }
         }

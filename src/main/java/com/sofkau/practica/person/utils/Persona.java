@@ -33,7 +33,7 @@ public class Persona {
     /**
      * Instancia de la clase Random para generar valores aleatorios
      */
-    private Random random = new Random();
+    private final Random random = new Random();
 
     private String nombre;
     private Integer edad;
@@ -130,7 +130,7 @@ public class Persona {
      * @return Integer
      */
     public Integer calcularIMC(){
-        Double imc =numeroImc();
+        double imc =numeroImc();
 
         if(imc<20){
             return IMCBAJO;
